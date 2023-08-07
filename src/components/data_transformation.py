@@ -63,7 +63,6 @@ class DataTransformation:
 
             logging.info("Read train and test data completed")
 
-            print(train_df.head())
 
             logging.info("Obtaining preprocessing object")
 
@@ -72,9 +71,7 @@ class DataTransformation:
             target_column_name="G3"
             numerical_columns = ['age', 'Medu', 'Fedu', 'traveltime', 'studytime', 'failures', 'famrel', 'freetime', 'Dalc', 'Walc', 'health', 'absences', 'G1', 'G2', 'goout']
 
-            
-            print("G3" in train_df.columns)
-            print("G3" in test_df.columns)
+
             input_feature_train_df= train_df.drop(columns=[target_column_name],axis=1)
             target_feature_train_df= train_df[target_column_name]
 
@@ -105,7 +102,7 @@ class DataTransformation:
             return (
                 train_arr,
                 test_arr,
-                self.data_transformation_config.preprocessor_obj_file_path,
+                self.data_transformation_config.preprocessor_obj_file_path
             )
         except Exception as e:
             raise CustomException(e,sys)
