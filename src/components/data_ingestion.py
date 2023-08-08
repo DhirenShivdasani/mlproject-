@@ -56,7 +56,8 @@ if __name__ =="__main__":
 
 
     data_transformation = DataTransformation()
-    train_arr, test_arr,_ = data_transformation.initiate_data_transformation(train_data, test_data)
+    train_arr, test_arr,_,selected_features = data_transformation.initiate_data_transformation(train_data, test_data)
 
+    print("Selected features based on correlation:", selected_features)
     model_trainer = ModelTrainer()
     print(model_trainer.initiate_model_trainer(train_arr, test_arr))

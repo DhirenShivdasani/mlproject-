@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Exam Performance Indicator</title>
+</head>
+<body>
+    <div class="login">
+        <h1>Student Exam Performance Prediction</h1>
+        <form action="{{ url_for('predict_datapoint')}}" method="post">
+            <!-- G1 Score -->
+            <div class="mb-3">
+                <label class="form-label">G1 Score (0-20)</label>
+                <input class="form-control" type="number" name="G1" placeholder="Enter G1 Score" min="0" max="20" required />
+            </div>
+            <!-- G2 Score -->
+            <div class="mb-3">
+                <label class="form-label">G2 Score (0-20)</label>
+                <input class="form-control" type="number" name="G2" placeholder="Enter G2 Score" min="0" max="20" required />
+            </div>
+            <!-- Mother's Education -->
+            <div class="mb-3">
+                <label class="form-label">Mother's Education</label>
+                <select class="form-control" name="Medu" required>
+                    <option class="placeholder" selected disabled value="">Select Education Level</option>
+                    <option value="0">None</option>
+                    <option value="1">Primary Education (4th Grade)</option>
+                    <option value="2">5th to 9th Grade</option>
+                    <option value="3">Secondary Education</option>
+                    <option value="4">Higher Education</option>
+                </select>
+            </div>
+            <!-- Father's Education -->
+            <div class="mb-3">
+                <label class="form-label">Father's Education</label>
+                <select class="form-control" name="Fedu" required>
+                    <option class="placeholder" selected disabled value="">Select Education Level</option>
+                    <option value="0">None</option>
+                    <option value="1">Primary Education (4th Grade)</option>
+                    <option value="2">5th to 9th Grade</option>
+                    <option value="3">Secondary Education</option>
+                    <option value="4">Higher Education</option>
+                </select>
+            </div>
+            <!-- Wants to Take Higher Education -->
+            <div class="mb-3">
+                <label class="form-label">Wants to Take Higher Education</label>
+                <select class="form-control" name="higher" required>
+                    <option class="placeholder" selected disabled value="">Select Status</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <!-- Extra Paid Classes Within the Course Subject -->
+            <div class="mb-3">
+                <label class="form-label">Extra Paid Classes Within the Course Subject</label>
+                <select class="form-control" name="paid" required>
+                    <option class="placeholder" selected disabled value="">Select Status</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <!-- Study Time -->
+            <div class="mb-3">
+                <label class="form-label">Study Time</label>
+                <select class="form-control" name="studytime" required>
+                    <option class="placeholder" selected disabled value="">Select Study Time</option>
+                    <option value="1">Less Than 2 Hours</option>
+                    <option value="2">2 to 5 Hours</option>
+                    <option value="3">5 to 10 Hours</option>
+                    <option value="4">More Than 10 Hours</option>
+                </select>
+            </div>
+            <!-- Internet Access at Home -->
+            <div class="mb-3">
+                <label class="form-label">Internet Access at Home</label>
+                <select class="form-control" name="internet" required>
+                    <option class="placeholder" selected disabled value="">Select Status</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <!-- Going Out With Friends -->
+            <div class="mb-3">
+                <label class="form-label">Going Out With Friends</label>
+                <select class="form-control" name="goout" required>
+                    <option class="placeholder" selected disabled value="">Select Frequency</option>
+                    <option value="1">Very Low</option>
+                    <option value="2">Low</option>
+                    <option value="3">Normal</option>
+                    <option value="4">High</option>
+                    <option value="5">Very High</option>
+                </select>
+            </div>
+            <!-- Travel Time -->
+            <div class="mb-3">
+                <label class="form-label">Travel Time</label>
+                <select class="form-control" name="traveltime" required>
+                    <option class="placeholder" selected disabled value="">Select Travel Time</option>
+                    <option value="1">Less Than 15 Min.</option>
+                    <option value="2">15 to 30 Min.</option>
+                    <option value="3">30 Min. to 1 Hour</option>
+                    <option value="4">More Than 1 Hour</option>
+                </select>
+            </div>
+            <!-- In a Romantic Relationship -->
+            <div class="mb-3">
+                <label class="form-label">In a Romantic Relationship</label>
+                <select class="form-control" name="romantic" required>
+                    <option class="placeholder" selected disabled value="">Select Status</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <!-- Age -->
+            <div class="mb-3">
+                <label class="form-label">Age</label>
+                <input class="form-control" type="number" name="age" placeholder="Enter your Age" min="15" max="22" required />
+            </div>
+            <!-- Number of Past Class Failures -->
+            <div class="mb-3">
+                <label class="form-label">Number of Past Class Failures</label>
+                <select class="form-control" name="failures" required>
+                    <option class="placeholder" selected disabled value="">Select Number of Failures</option>
+                    <option value="0">0</oxption>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3 or More</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <input class="btn btn-primary" type="submit" value="Predict your G3 Score" required />
+            </div>
+        </form>
+        <h2>
+           THE prediction is {{results}} 
+        </h2>
+    </div>
+</body>
+</html>
