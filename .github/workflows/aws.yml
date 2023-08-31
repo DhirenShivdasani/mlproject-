@@ -35,7 +35,7 @@ env:
   ECR_REPOSITORY: student-exam-performance           # set this to your Amazon ECR repository name
   ECS_SERVICE: student-exam-performance                 # set this to your Amazon ECS service name
   ECS_CLUSTER: student-exam-performance                 # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: aws:ecs:us-east-1:579415653945:task-definition/student-exam-performance:1 # set this to the path to your Amazon ECS task definition
+  ECS_TASK_DEFINITION: C:\Users\dhire\Downloads\mlproject--main.zip\mlproject--main\student-exam-performance-revision1.json # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: student-exam-performance           # set this to the name of the container in the
                                                # containerDefinitions section of your task definition
